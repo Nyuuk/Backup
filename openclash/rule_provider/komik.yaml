@@ -1,0 +1,20 @@
+payload:
+  - DOMAIN-SUFFIX,bacakomik.co,no-resolve
+  - DOMAIN-SUFFIX,boosei.com,no-resolve
+  - DOMAIN-SUFFIX,gurukomik.com,no-resolve
+  - DOMAIN-SUFFIX,kaisarkomik.com,no-resolve
+  - DOMAIN-SUFFIX,kiryuu.id,no-resolve
+  - DOMAIN-SUFFIX,klankomik.com,no-resolve
+  - DOMAIN-SUFFIX,komikav.com,no-resolve
+  - DOMAIN-SUFFIX,komikcast.com,no-resolve
+  - DOMAIN-SUFFIX,komikid.com,no-resolve
+  - DOMAIN-SUFFIX,komikindo.id,no-resolve
+  - DOMAIN-SUFFIX,komikmama.net,no-resolve
+  - DOMAIN-SUFFIX,maid.my.id,no-resolve
+  - DOMAIN-SUFFIX,mangadropout.xyz,no-resolve
+  - DOMAIN-SUFFIX,mangaid.click,no-resolve
+  - DOMAIN-SUFFIX,mangakita.net,no-resolve
+  - DOMAIN-SUFFIX,mangaceh.me,no-resolve
+  - DOMAIN-SUFFIX,manhuaid.com,no-resolve
+  - DOMAIN-SUFFIX,sekaikomik.in,no-resolve
+  - DOMAIN-KEYWORD,komik

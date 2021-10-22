@@ -1,0 +1,22 @@
+payload:
+  - DOMAIN,www.duolingo.com,no-resolve
+  - DOMAIN,d2.duolingo.com,no-resolve
+  - DOMAIN,excess.duolingo.com,no-resolve
+  - DOMAIN,d7mj4aqfscim2.cloudfront.net,no-resolve
+  - DOMAIN,d7mj4aqfscim2.cloudfront.net,no-resolve
+  - DOMAIN,d3kwyfyztuo0xs.cloudfront.net,no-resolve
+  - DOMAIN,d37gvrvc0wt4s1.cloudfront.net,no-resolve
+  - DOMAIN,d35aaqx5ub95lt.cloudfront.net,no-resolve
+  - DOMAIN,forum.duolingo.com,no-resolve
+  - DOMAIN,forum-api.duolingo.com,no-resolve
+  - DOMAIN,duolingo-forum-web.duolingo.com,no-resolve
+  - DOMAIN,s3.amazonaws.com,no-resolve
+  - DOMAIN,incubator.duolingo.com,no-resolve
+  - DOMAIN,sdk.amazonaws.com,no-resolve
+  - DOMAIN,apis.google.com,no-resolve
+  - DOMAIN,ajax.googleapis.com,no-resolve
+  - DOMAIN,content.googleapis.com,no-resolve
+  - DOMAIN,api.mixpanel.com,no-resolve
+  - DOMAIN,asset0.zendesk.com,no-resolve
+  - DOMAIN,assets.zendesk.com,no-resolve
+  - DOMAIN-KEYWORD,duolingo

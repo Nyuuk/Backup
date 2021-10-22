@@ -1,0 +1,124 @@
+---
+mixed-port: 7893
+redir-port: 7892
+allow-lan: true
+mode: rule
+log-level: silent
+secret: '123456'
+external-controller: 0.0.0.0:9090
+dns:
+  enable: true
+  listen: 127.0.0.1:7874
+  enhanced-mode: redir-host
+  nameserver:
+  - tls://dns.adguard.com
+  - https://dns.adguard.com/dns-query
+  - tls://1.1.1.1:853
+  - tls://8.8.8.8:853
+  ipv6: false
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+  - tcp://8.8.8.8:53
+  - tcp://8.8.4.4:53
+proxy-providers:
+#  EDUKASI:
+#    type: file
+#    path: "./proxy_provider/edukasi.yaml"
+#    health-check:
+#      enable: true
+#      url: https://cp.cloudflare.com/generate_204
+#      interval: 60
+  Maps&Zoom:
+    type: file
+    path: "./proxy_provider/mapsandzoom.yaml"
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 60
+proxy-groups:
+- name: "\U0001F511Proxy"
+  type: select
+  proxies:
+  - "\U0001F525 Best Ping"
+  use:
+  - Maps&Zoom
+#  - EDUKASI
+- name: "\U0001F525 Best Ping"
+  type: url-test
+  use:
+  - Maps&Zoom
+#  - EDUKASI
+  url: http://www.gstatic.com/generate_204
+  interval: '300'
+- name: Komik
+  type: select
+  use:
+  - Maps&Zoom
+#  - EDUKASI
+- name: Duolingo
+  type: select
+  use:
+  - Maps&Zoom
+- name: AdBlock
+  type: select
+  proxies:
+  - "\U0001F511Proxy"
+  - REJECT
+  - DIRECT
+- name: "\U0001F3AFOthers"
+  type: select
+  proxies:
+  - "\U0001F511Proxy"
+  - "DIRECT"
+rules:
+- DOMAIN-KEYWORD,announce,DIRECT,no-resolve
+- DOMAIN-KEYWORD,torrent,DIRECT,no-resolve
+- DOMAIN-KEYWORD,tracker,DIRECT,no-resolve
+- DOMAIN-SUFFIX,smtp,DIRECT,no-resolve
+- DOMAIN-SUFFIX,local,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,192.168.8.0/24,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+- IP-CIDR6,::1/128,DIRECT,no-resolve
+- IP-CIDR6,fc00::/7,DIRECT,no-resolve
+- IP-CIDR6,fe80::/10,DIRECT,no-resolve
+- IP-CIDR6,fd00::/8,DIRECT,no-resolve
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+- RULE-SET,Komik,Komik
+#- RULE-SET,DOMESTIC,DOMESTIC
+- RULE-SET,AdBlock,AdBlock
+- RULE-SET,Duolingo,Duolingo
+- "MATCH,\U0001F3AFOthers"
+rule-providers:
+  Komik:
+    type: file
+    behavior: classical
+    path: "./rule_provider/komik.yaml"
+    interval: 360
+  DOMESTIC:
+    type: file
+    behavior: classical
+    path: "./rule_provider/Domestic.yaml"
+    interval: 86400
+  AdBlock:
+    type: file
+    behavior: classical
+    path: "./rule_provider/❌AdBlock.yaml"
+    interval: 86400
+  Duolingo:
+    type: file
+    behavior: classical
+    path: "./rule_provider/duolingo.yaml"
+    interval: 86400
+profile:
+  store-selected: true
+ipv6: true
+port: 7890
+socks-port: 7891
+bind-address: "*"
+external-ui: "/usr/share/openclash/dashboard"

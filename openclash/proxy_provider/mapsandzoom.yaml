@@ -1,0 +1,74 @@
+proxies:
+- name: TJ-Biznet-zoom
+  type: trojan
+  server: 103.150.89.194
+  port: 443
+  password: 
+  udp: true
+  sni: zoom.us
+  skip-cert-verify: true
+- name: DO-to-Biznet-Trojan
+  type: trojan
+  server: sg1.bukanvvip.my.id
+  port: 443
+  password:
+  udp: true
+  sni: zoom.us
+  skip-cert-verify: true
+- name: linode-kitu-27
+  type: ss
+  server: linode6.kitu.xyz
+  port: 1445
+  cipher: chacha20-ietf-poly1305
+  password: kituvpn-dnan
+  plugin: obfs-local
+  plugin-opts:
+   mode: tls  or http
+   host: zoom.us
+#- name: TJ-Biznet-test
+#  type: trojan
+#  server: 103.150.89.194
+#  port: 443
+#  password:
+#  udp: true
+#  sni: talkgadgat.google.com
+#  skip-cert-verify: true
+#- name: VM-Biznet-Maps
+#  server: id2.bukanvvip.my.id #103.150.89.194
+#  port: 8443
+#  type: vmess
+#  uuid: 
+#  alterId: 64
+#  udp: true
+#  cipher: auto
+#  tls: true
+#  skip-cert-verify: true
+#  network: ws
+#  ws-path: /bukanvvip
+#  ws-headers: {Host: maps.googleapis.com}
+#- name: VM-NUSA-Maps
+#  server: 43.229.254.51
+#  port: 443
+#  type: vmess
+#  uuid: 
+#  alterId: 2
+#  udp: true
+#  cipher: auto
+#  tls: true
+#  skip-cert-verify: true
+#  network: ws
+#  ws-path: /v2ray
+#  ws-headers: {Host: maps.googleapis.com}
+#- name: VM-NUSA-Zoom
+#  server: 43.229.254.51
+#  port: 443
+#  type: vmess
+#  uuid: 
+#  alterId: 2
+#  udp: true
+#  cipher: auto
+#  tls: true
+#  skip-cert-verify: true
+#  network: ws
+#  ws-path: /v2ray
+#  ws-headers: {Host: zoom.us}
