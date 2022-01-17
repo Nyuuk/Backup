@@ -1,0 +1,20 @@
+proxies:
+- name: TJ-ID3
+  type: trojan
+  server: id3.bukanvvip.my.id
+  port: 8443
+  password: nyuuk
+  udp: true
+  sni: mobilemaps-pa.googleapis.com
+  skip-cert-verify: true
+- name: TJ-gRPC-ID3
+  type: trojan
+  server: id3.bukanvvip.my.id
+  port: 48531
+  password: dmin
+  udp: true
+  sni: mobilemaps-pa.googleapis.com
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: bukanvvip
